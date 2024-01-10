@@ -239,6 +239,17 @@ with col[0]:
         st.write('Outbound')
         st.altair_chart(donut_chart_less)
 
+def make_pie_chart(input_df, category_column, value_column):
+    pie_chart = alt.Chart(input_df).mark_arc().encode(
+        theta=alt.Theta(field=value_column, type='quantitative'),
+        color=alt.Color(field=category_column, type='nominal', legend=alt.Legend(title="Categories")),
+        tooltip=[category_column, value_column]
+    ).properties(
+        width=400,
+        height=400
+    )
+    return pie_chart
+    
 with col[1]:
     st.markdown('#### Total Population')
     
