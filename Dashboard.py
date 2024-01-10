@@ -247,6 +247,10 @@ with col[1]:
     
     heatmap = make_heatmap(df_reshaped, 'year', 'states', 'population', selected_color_theme)
     st.altair_chart(heatmap, use_container_width=True)
+
+    st.markdown('#### Your Pie Chart Title Here')
+    pie_chart = make_pie_chart(df_reshaped, 'year', 'population')  # Replace 'df' with your actual DataFrame
+    st.altair_chart(pie_chart, use_container_width=True)
     
 
 with col[2]:
