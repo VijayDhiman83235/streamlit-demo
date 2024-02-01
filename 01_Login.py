@@ -15,14 +15,14 @@ from ONDC import ONDC_dash
 
 warnings.filterwarnings('ignore')
 
-icon_ = Image.open(r"C:/Users/vijay39.kumar/Desktop/paytm_icon-icons.com_62778.ico")
+icon_ = Image.open("ICON/paytm_icon-icons.com_62778.ico")
 
 st.set_page_config(page_title="Paytm Reports", 
                    page_icon=icon_,
                    layout="wide")
 
 
-image = Image.open(r"C:\Users\vijay39.kumar\Desktop\Paytm_Logo.png")
+image = Image.open("ICON/Paytm_Logo.png")
 image = image.resize((300, 100))
 st.sidebar.image(image,caption=" ")
 
