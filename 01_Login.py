@@ -30,7 +30,7 @@ st.sidebar.image(image,caption=" ")
 names = ["Vijay Kumar","Suresh Fatehpuria"]
 usernames = ["vkumar","sfatehpuria"]
 
-file_path = Path(__file__).parent / "hashed_pw.pkl"
+file_path = "PKL_/hashed_pw.pkl"
 
 with file_path.open("rb") as file:
     hashed_password = pickle.load(file)
