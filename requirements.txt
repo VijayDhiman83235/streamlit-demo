@@ -2,4 +2,5 @@ streamlit
 pandas
 altair
 plotly
+streamlit_authenticator
 
