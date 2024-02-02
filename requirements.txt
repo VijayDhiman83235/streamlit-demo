@@ -5,3 +5,5 @@ plotly
 streamlit_authenticator
 pickle
 pathlib
+yaml
+yaml.loader
