@@ -88,5 +88,5 @@ pages = create_pages_dict([1, 2])
 
 #     authenticator.logout("Logout", "sidebar")
 
-
+pages[page]()
 # main()
