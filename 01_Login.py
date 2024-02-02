@@ -31,10 +31,10 @@ names = ["Vijay Kumar","Suresh Fatehpuria"]
 usernames = ["vkumar","sfatehpuria"]
 pswd = ["vijay@123","suresh@123"]
 
-# file_path = "PKL/hashed_pw.pkl"
+file_path = "PKL/hashed_pw.pkl"
 
-# with open(file_path, 'rb') as file:
-#     hashed_password = pickle.load(file)
+with open(file_path, 'rb') as file:
+  hashed_password = pickle.load(file)
 
 
 authenticator = stauth.Authenticate(names, usernames, pswd,
