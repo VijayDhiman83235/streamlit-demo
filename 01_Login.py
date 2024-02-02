@@ -13,6 +13,9 @@ import warnings
 from PIL import Image
 from ONDC import ONDC_dash
 
+import yaml
+from yaml.loader import SafeLoader
+
 warnings.filterwarnings('ignore')
 
 icon_ = Image.open("ICON/paytm_icon-icons.com_62778.ico")
@@ -29,16 +32,16 @@ st.sidebar.image(image,caption=" ")
 
 names = ["Vijay Kumar","Suresh Fatehpuria"]
 usernames = ["vkumar","sfatehpuria"]
-pswd = ["vijay@123","suresh@123"]
 
-file_path = "PKL/hashed_pw.pkl"
+authenticator = Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['preauthorized']
+)
 
-with open(file_path, 'rb') as file:
-  hashed_password = pickle.load(file)
-
-
-authenticator = stauth.Authenticate(names, usernames, pswd,
-                                    "dashboard_password", "abcdef", cookie_expiry_days=1)
+name, authentication_status, username = authenticator.login('Login', 'main')
 
 if 'authentication_status' not in st.session_state:
     st.session_state['authentication_status'] = None
