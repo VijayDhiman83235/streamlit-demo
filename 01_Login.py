@@ -89,4 +89,4 @@ st.sidebar.image(image,caption=" ")
 #     authenticator.logout("Logout", "sidebar")
 
 # main()
-ONDC_dash
+ONDC_dash()
