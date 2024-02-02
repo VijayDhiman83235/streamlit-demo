@@ -45,7 +45,7 @@ authenticator = stauth.Authenticate(
     config['preauthorized']
 )
 
-name, authentication_status, username = stauth.authenticator.login('Login', 'main')
+name, authentication_status, username = authenticator.login('Login', 'main')
 
 if 'authentication_status' not in st.session_state:
     st.session_state['authentication_status'] = None
