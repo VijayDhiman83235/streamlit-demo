@@ -10,17 +10,17 @@ import streamlit_authenticator as stauth  # pip install streamlit-authenticator
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="streamlit Dashboard", page_icon=":bar_chart:", layout="wide")
 
-# hide_bar= """
-#     <style>
-#     [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-#         visibility:hidden;
-#         width: 0px;
-#     }
-#     [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
-#         visibility:hidden;
-#     }
-#     </style>
-# """
+hide_bar= """
+    <style>
+    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
+        visibility:hidden;
+        width: 0px;
+    }
+    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
+        visibility:hidden;
+    }
+    </style>
+"""
 
 # --- USER AUTHENTICATION ---
 names = ["Peter Parker", "Rebecca Miller","bharath"]
