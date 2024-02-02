@@ -32,21 +32,21 @@ usernames = ["vkumar","sfatehpuria"]
 
 file_path = "PKL/hashed_pw.pkl"
 
-# with open(file_path, 'rb') as file:
-#     hashed_password = pickle.load(file)
+with open(file_path, 'rb') as file:
+    hashed_password = pickle.load(file)
 
-# authenticator = stauth.Authenticate(
-#     names=names,
-#     usernames=usernames,
-#     hashed_passwords=hashed_password,
-#     cookie_name="dashboard_password",
-#     key="abcdef",
-#     cookie_expiry_days=10
-# )
+authenticator = stauth.Authenticate(
+    names=names,
+    usernames=usernames,
+    passwords=hashed_password,
+    cookie_name="dashboard_password",
+    key="abcdef",
+    cookie_expiry_days=10
+)
 
-# if 'authentication_status' not in st.session_state:
-#     st.session_state['authentication_status'] = None
-#     st.session_state['username'] = None
+if 'authentication_status' not in st.session_state:
+    st.session_state['authentication_status'] = None
+    st.session_state['username'] = None
 def page2():
     st.write("This is page 2")
 
