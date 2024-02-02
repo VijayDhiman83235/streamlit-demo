@@ -35,14 +35,9 @@ file_path = "PKL/hashed_pw.pkl"
 with open(file_path, 'rb') as file:
     hashed_password = pickle.load(file)
 
-authenticator = stauth.Authenticate(
-    names=names,
-    usernames=usernames,
-    passwords=hashed_password,
-    cookie_name="dashboard_password",
-    key="abcdef",
-    cookie_expiry_days=10
-)
+
+authenticator = stauth.Authenticate(names, usernames, hashed_password,
+                                    "dashboard_password", "abcdef", cookie_expiry_days=1)
 
 if 'authentication_status' not in st.session_state:
     st.session_state['authentication_status'] = None
