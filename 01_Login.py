@@ -29,14 +29,15 @@ st.sidebar.image(image,caption=" ")
 
 names = ["Vijay Kumar","Suresh Fatehpuria"]
 usernames = ["vkumar","sfatehpuria"]
+pswd = ["vijay@123","suresh@123"]
 
-file_path = "PKL/hashed_pw.pkl"
+# file_path = "PKL/hashed_pw.pkl"
 
-with open(file_path, 'rb') as file:
-    hashed_password = pickle.load(file)
+# with open(file_path, 'rb') as file:
+#     hashed_password = pickle.load(file)
 
 
-authenticator = stauth.Authenticate(names, usernames, hashed_password,
+authenticator = stauth.Authenticate(names, usernames, pswd,
                                     "dashboard_password", "abcdef", cookie_expiry_days=1)
 
 if 'authentication_status' not in st.session_state:
