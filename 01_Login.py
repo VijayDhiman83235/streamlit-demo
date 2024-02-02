@@ -51,22 +51,22 @@ st.sidebar.image(image,caption=" ")
 #     st.write("This is page 3")
 
 
-def create_pages_dict(page_numbers):
-    all_pages = {
-        1: ("ONDC", ONDC_dash),
-        2: ("Test Page 2", page2),
-        3: ("Test Page 3", page3),      
-    }
+# def create_pages_dict(page_numbers):
+#     all_pages = {
+#         1: ("ONDC", ONDC_dash),
+#         2: ("Test Page 2", page2),
+#         3: ("Test Page 3", page3),      
+#     }
 
-    pages_dict = {}
-    for num in page_numbers:
-        if num in all_pages:
-            page_name, page_function = all_pages[num]
-            pages_dict[page_name] = page_function
+#     pages_dict = {}
+#     for num in page_numbers:
+#         if num in all_pages:
+#             page_name, page_function = all_pages[num]
+#             pages_dict[page_name] = page_function
 
-    return pages_dict
+#     return pages_dict
 
-pages = create_pages_dict([1, 2])
+# pages = create_pages_dict([1, 2])
 
 # def main():
 
@@ -88,5 +88,5 @@ pages = create_pages_dict([1, 2])
 
 #     authenticator.logout("Logout", "sidebar")
 
-pages[page]()
 # main()
+ONDC_dash
