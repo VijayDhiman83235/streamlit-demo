@@ -41,52 +41,52 @@ with file_path.open("rb") as file:
 authenticator = stauth.Authenticate(names, usernames, hashed_password,
                                     "dashboard_password", "abcdef", cookie_expiry_days=1)
 
-if 'authentication_status' not in st.session_state:
-    st.session_state['authentication_status'] = None
-    st.session_state['username'] = None
-def page2():
-    st.write("This is page 2")
+# if 'authentication_status' not in st.session_state:
+#     st.session_state['authentication_status'] = None
+#     st.session_state['username'] = None
+# def page2():
+#     st.write("This is page 2")
 
-def page3():
-    st.write("This is page 3")
+# def page3():
+#     st.write("This is page 3")
 
 
-def create_pages_dict(page_numbers):
-    all_pages = {
-        1: ("ONDC", ONDC_dash),
-        2: ("Test Page 2", page2),
-        3: ("Test Page 3", page3),      
-    }
+# def create_pages_dict(page_numbers):
+#     all_pages = {
+#         1: ("ONDC", ONDC_dash),
+#         2: ("Test Page 2", page2),
+#         3: ("Test Page 3", page3),      
+#     }
 
-    pages_dict = {}
-    for num in page_numbers:
-        if num in all_pages:
-            page_name, page_function = all_pages[num]
-            pages_dict[page_name] = page_function
+#     pages_dict = {}
+#     for num in page_numbers:
+#         if num in all_pages:
+#             page_name, page_function = all_pages[num]
+#             pages_dict[page_name] = page_function
 
-    return pages_dict
+#     return pages_dict
 
-pages = create_pages_dict([1, 2])
+# pages = create_pages_dict([1, 2])
 
-def main():
+# def main():
 
-    if st.session_state.get('authentication_status') != True:
-        name, authentication_status, username = authenticator.login("Login", "main")
+#     if st.session_state.get('authentication_status') != True:
+#         name, authentication_status, username = authenticator.login("Login", "main")
 
-        st.session_state['authentication_status'] = authentication_status
-        st.session_state['username'] = username
+#         st.session_state['authentication_status'] = authentication_status
+#         st.session_state['username'] = username
         
-        if authentication_status == False:
-            st.error("Username/password is incorrect")
-        elif authentication_status == None:
-            st.warning("Please enter your username and password")
-        return  
+#         if authentication_status == False:
+#             st.error("Username/password is incorrect")
+#         elif authentication_status == None:
+#             st.warning("Please enter your username and password")
+#         return  
 
-    st.sidebar.title(f"Welcome {st.session_state['username']}")
-    page = st.sidebar.selectbox("Select Report", list(pages.keys()))
-    pages[page]()
+#     st.sidebar.title(f"Welcome {st.session_state['username']}")
+#     page = st.sidebar.selectbox("Select Report", list(pages.keys()))
+#     pages[page]()
 
-    authenticator.logout("Logout", "sidebar")
+#     authenticator.logout("Logout", "sidebar")
 
 
-main()
+# main()
