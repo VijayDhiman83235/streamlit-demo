@@ -33,17 +33,13 @@ st.sidebar.image(image,caption=" ")
 names = ["Vijay Kumar","Suresh Fatehpuria"]
 usernames = ["vkumar","sfatehpuria"]
 
+file_path = Path(__file__).parent / "hashed_pw.pkl"
 
-with open('YAML/creds.yml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-  
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
-)
+with file_path.open("rb") as file:
+    hashed_password = pickle.load(file)
+
+authenticator = stauth.Authenticate(names, usernames, hashed_password,
+                                    "dashboard_password", "abcdef", cookie_expiry_days=1)
 
 name, authentication_status, username = authenticator.login('Login', 'main')
 
