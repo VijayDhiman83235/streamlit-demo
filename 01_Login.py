@@ -41,8 +41,6 @@ with file_path.open("rb") as file:
 authenticator = stauth.Authenticate(names, usernames, hashed_password,
                                     "dashboard_password", "abcdef", cookie_expiry_days=1)
 
-name, authentication_status, username = authenticator.login('Login', 'main')
-
 if 'authentication_status' not in st.session_state:
     st.session_state['authentication_status'] = None
     st.session_state['username'] = None
