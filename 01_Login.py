@@ -38,8 +38,8 @@ usernames = ["vkumar","sfatehpuria"]
 # with file_path.open("rb") as file:
 #     hashed_password = pickle.load(file)
 
-authenticator = stauth.Authenticate("Vijay Kumar", "vkumar", "$2b$12$0j/n3Zg73uysLYwiUtfq0.XUk.iObYCmx5X43VqxfQQjrMcE/BHwC")
-                                    # "dashboard_password", "abcdef", cookie_expiry_days=1)
+authenticator = stauth.Authenticate("Vijay Kumar", "vkumar", "$2b$12$0j/n3Zg73uysLYwiUtfq0.XUk.iObYCmx5X43VqxfQQjrMcE/BHwC",
+                                    "dashboard_password", "abcdef", cookie_expiry_days=1)
 
 # if 'authentication_status' not in st.session_state:
 #     st.session_state['authentication_status'] = None
