@@ -27,37 +27,18 @@ image = image.resize((300, 100))
 st.sidebar.image(image,caption=" ")
 
 
-# names = ["Vijay Kumar","Suresh Fatehpuria"]
-# usernames = ["vkumar","sfatehpuria"]
+names = ["Vijay Kumar","Suresh Fatehpuria"]
+usernames = ["vkumar","sfatehpuria"]
 
-# credentials = {"usernames": {names[i]: usernames[i] for i in range(len(names))}}
-
-# file_path = Path(__file__).parent / "hashed_pw.pkl"
-
-# with file_path.open("rb") as file:
-#     hashed_password = pickle.load(file)
-
-# # authenticator = stauth.Authenticate(names, usernames, hashed_password)
-# #                                     # "dashboard_password", "abcdef", cookie_expiry_days=10)
-
-# authenticator = stauth.Authenticate(credentials['usernames'], credentials['usernames'], hashed_password)
-
-
-# Define names and usernames
-names = ["Vijay Kumar", "Suresh Fatehpuria"]
-usernames = ["vkumar", "sfatehpuria"]
-
-# Convert names and usernames into a dictionary
-# Assuming names are keys and usernames are values
 credentials = {"usernames": {names[i]: usernames[i] for i in range(len(names))}}
 
-# Load hashed passwords from file
 file_path = Path(__file__).parent / "hashed_pw.pkl"
+
 with file_path.open("rb") as file:
     hashed_password = pickle.load(file)
 
-# Initialize the authenticator
-authenticator = stauth.Authenticate(credentials['usernames'], credentials['usernames'], hashed_password)
+authenticator = stauth.Authenticate(names, usernames, hashed_password)
+                                    "dashboard_password", "abcdef", cookie_expiry_days=10)
 
 if 'authentication_status' not in st.session_state:
     st.session_state['authentication_status'] = None
