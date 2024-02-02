@@ -1,9 +1,9 @@
-streamlit
 pandas
 altair
 plotly
 streamlit-authenticator==0.1.5
 pickle
 pathlib
-yaml
-yaml.loader
+streamlit==1.11.0
+streamlit-authenticator==0.1.5
+streamlit-folium==0.6.14
