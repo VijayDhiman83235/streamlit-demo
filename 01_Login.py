@@ -33,6 +33,10 @@ st.sidebar.image(image,caption=" ")
 names = ["Vijay Kumar","Suresh Fatehpuria"]
 usernames = ["vkumar","sfatehpuria"]
 
+
+with open('YAML/creds.yml') as file:
+    config = yaml.load(file, Loader=SafeLoader)
+  
 authenticator = Authenticate(
     config['credentials'],
     config['cookie']['name'],
